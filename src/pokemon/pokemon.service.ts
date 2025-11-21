@@ -84,6 +84,14 @@ export class PokemonService {
     return;
   }
 
+  async removeBD() {
+    await this.pokemonModel.deleteMany({});
+  }
+
+  async createPokemonsWithArray(pokemons: CreatePokemonDto[]) {
+    await this.pokemonModel.insertMany(pokemons);
+  }
+
   private handleExcepcions(error: any) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (error.code === 11000) {
