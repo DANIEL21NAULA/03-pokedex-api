@@ -14,7 +14,7 @@ async function bootstrap() {
       // ! Si hay datos de más en el body de la request tira un error
       // ! Indicando que la propiedad no debería de existir
       forbidNonWhitelisted: true,
-
+      // transform: true, //* convierte los datos que se invia
       // ! Excluye los campos undefined
       transformOptions: {
         exposeUnsetFields: false,
